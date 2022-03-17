@@ -5,8 +5,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Abstract\" />
+		<Folder Include="Abstract\UserManagement\" />
+		<Folder Include="Abstract\ProductManagement\" />
+		<Folder Include="Abstract\OrderManagement\" />
 		<Folder Include="Concrete\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ECommerce.Entities\ECommerce.Entities.csproj" />
 	</ItemGroup>
 
 </Project>
