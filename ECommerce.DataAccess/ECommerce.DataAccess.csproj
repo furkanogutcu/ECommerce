@@ -13,7 +13,8 @@
 		<Folder Include="Concrete\EntityFramework\Mappings\UserManagement\" />
 		<Folder Include="Concrete\EntityFramework\OrderManagement\" />
 		<Folder Include="Concrete\EntityFramework\ProductManagement\" />
-		<Folder Include="Concrete\EntityFramework\UserManagement\" />
+		<Folder Include="Concrete\EntityFramework\UserManagement\Address\" />
+		<Folder Include="Migrations\Helpers\" />
 	</ItemGroup>
 
 	<ItemGroup>
