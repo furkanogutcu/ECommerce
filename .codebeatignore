@@ -1,0 +1,3 @@
+ECommerce.DataAccess/Migrations/**
+ECommerce.DataAccess/Concrete/EntityFramework/Mappings/**
+ECommerce.DataAccess/Concrete/EntityFramework/ECommerceContext.cs
