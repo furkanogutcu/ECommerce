@@ -9,5 +9,7 @@ namespace ECommerce.Entities.Concrete.UserManagement.Address
         public virtual AddressCountry AddressCountry { get; set; }
         public string Name { get; set; }
         public string StateCode { get; set; }
+        public string? Latitude { get; set; }
+        public string? Longitude { get; set; }
     }
 }
