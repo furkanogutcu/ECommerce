@@ -1,4 +1,6 @@
-﻿using ECommerce.DataAccess.Concrete.EntityFramework;
+﻿using System;
+using System.Diagnostics;
+using ECommerce.DataAccess.Concrete.EntityFramework;
 using ECommerce.DataAccess.Concrete.EntityFramework.UserManagement.Address;
 using ECommerce.DataAccess.Migrations.Helpers;
 using ECommerce.Entities.Concrete.UserManagement.Address;
@@ -12,6 +14,9 @@ namespace ECommerce.DataAccess.Migrations
         {
             using (var context = new ECommerceContext())
             {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+
                 var countryList = LoadDataHelper.GetEntityListFromJsonFile<AddressCountry>(@"Migrations\Datas\countries.json");
                 var stateList = LoadDataHelper.GetEntityListFromJsonFile<AddressState>(@"Migrations\Datas\states.json");
                 var cityList = LoadDataHelper.GetEntityListFromJsonFile<AddressCity>(@"Migrations\Datas\cities.json");
@@ -37,6 +42,9 @@ namespace ECommerce.DataAccess.Migrations
                     addressCity.Id = 0;
                     cityDal.Add(addressCity);
                 }
+
+                stopwatch.Stop();
+                Console.WriteLine($"A total of {countryList.Count + stateList.Count + cityList.Count} records ({countryList.Count} countries, {stateList.Count} states, {cityList.Count} cities) were added in {(int)Math.Ceiling(stopwatch.Elapsed.TotalSeconds)} seconds!");
             }
         }
 
